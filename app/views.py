@@ -8,7 +8,7 @@ def index():
 	posts = [	# fake array of posts
 		{
 			'author':{'nickname': 'Tom'},
-			'body': 'Beautiful day in San Francisco!'
+			'body': 'Beautiful day in New York!'
 		},
 		{
 			'author':{'nickname': 'Jenni'},
