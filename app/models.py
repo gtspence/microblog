@@ -6,6 +6,24 @@ class User(db.Model):
 	email = db.Column(db.String(120), index=True, unique=True)
 	posts = db.relationship('Post', backref='author', lazy='dynamic')
 	
+	@property
+	def is_authenticated(self):
+		return True		#should just return True unless the object represents a user that should not be allowed to authenticate for some reason
+	
+	@property
+	def is_active(self):
+		return True		#should return True for users unless they are inactive, for example because they have been banned
+	
+	@property
+	def is_anonymous(self):
+		return False	#should return True only for fake users that are not supposed to log in to the system
+		
+	def get_id(self):
+		try:
+			return unicode(self.id) # python 2
+		except NameError:
+			return str(self.id) # python 3
+	
 	def __repr__(self):
 		return '<User %r>' % (self.nickname)
 		
