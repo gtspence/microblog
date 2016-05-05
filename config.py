@@ -17,7 +17,7 @@ SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
 
 # mail server settings
 MAIL_SERVER = 'smtp.gmail.com'
-MAIL_PORT = 465 # or listen with: "python -m smtpd -n -c DebuggingServer localhost:2525"
+MAIL_PORT = 465
 MAIL_USE_TLS = False
 MAIL_USE_SSL = True
 MAIL_USERNAME = 'fantasyswimming@gmail.com'
